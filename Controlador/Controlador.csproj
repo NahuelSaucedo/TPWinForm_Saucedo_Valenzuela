@@ -42,7 +42,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccesoDatos.cs" />
+    <Compile Include="ArticulosNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Modelo\Modelo.csproj">
+      <Project>{fa714b0c-af52-4bd1-bfdd-d2189ab8ac68}</Project>
+      <Name>Modelo</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

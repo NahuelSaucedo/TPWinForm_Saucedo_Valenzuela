@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace Controlador
 {
-    class AccesoDatos
+   public class AccesoDatos
     {
         private SqlConnection conexion;
         private SqlCommand comando;
@@ -19,7 +19,7 @@ namespace Controlador
        
         public AccesoDatos()
         {
-            conexion = new SqlConnection("data source = .\\SQLEXPRESS; inital catalog =  CATALOGO_DB;integrated security = sspi;");
+            conexion = new SqlConnection("data source = .\\SQLEXPRESS; initial catalog =  CATALOGO_DB;integrated security = sspi;");
             comando = new SqlCommand();
         }
 

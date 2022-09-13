@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Modelo;
+using Controlador;
 
 namespace Controlador
 {
-    class ArticulosNegocio
+   public class ArticulosNegocio
     {
         public List<Articulos> listar() {
         List<Articulos> Lista  = new List<Articulos>();
