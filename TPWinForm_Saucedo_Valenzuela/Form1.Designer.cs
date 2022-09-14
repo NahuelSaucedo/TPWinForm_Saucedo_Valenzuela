@@ -30,28 +30,58 @@ namespace TPWinForm_Saucedo_Valenzuela
         private void InitializeComponent()
         {
             this.dgvDatos = new System.Windows.Forms.DataGridView();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbxArticulo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvDatos
             // 
             this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDatos.Location = new System.Drawing.Point(136, 58);
+            this.dgvDatos.Location = new System.Drawing.Point(13, 71);
+            this.dgvDatos.Margin = new System.Windows.Forms.Padding(4);
             this.dgvDatos.Name = "dgvDatos";
-            this.dgvDatos.Size = new System.Drawing.Size(536, 296);
+            this.dgvDatos.RowHeadersWidth = 51;
+            this.dgvDatos.Size = new System.Drawing.Size(884, 364);
             this.dgvDatos.TabIndex = 0;
+            this.dgvDatos.SelectionChanged += new System.EventHandler(this.dgvDatos_SelectionChanged);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pbxArticulo
+            // 
+            this.pbxArticulo.Location = new System.Drawing.Point(931, 71);
+            this.pbxArticulo.Name = "pbxArticulo";
+            this.pbxArticulo.Size = new System.Drawing.Size(381, 364);
+            this.pbxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxArticulo.TabIndex = 2;
+            this.pbxArticulo.TabStop = false;
+            this.pbxArticulo.Click += new System.EventHandler(this.pbxArticulo_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1357, 554);
+            this.Controls.Add(this.pbxArticulo);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dgvDatos);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -59,6 +89,8 @@ namespace TPWinForm_Saucedo_Valenzuela
         #endregion
 
         private System.Windows.Forms.DataGridView dgvDatos;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbxArticulo;
     }
 }
 

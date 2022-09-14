@@ -8,17 +8,17 @@ using Controlador;
 
 namespace Controlador
 {
-   public class ArticulosNegocio
+   public class ArticuloNegocio
     {
-        public List<Articulos> listar() {
-        List<Articulos> Lista  = new List<Articulos>();
+        public List<Articulo> listar() {
+            List<Articulo> Lista  = new List<Articulo>();
             AccesoDatos datos = new AccesoDatos();
-            datos.setConsulta("Select A.Id, A.Codigo, A.Nombre, A.Descripcion, A.IdMarca, A.IdCategoria, A.ImagenUrl, A.precio  from Articulos as A");
+            datos.setConsulta("Select A.Codigo, A.Nombre, A.Descripcion, A.IdMarca, A.IdCategoria, A.ImagenUrl, A.precio  from Articulos as A");
             datos.EjecutarLectura();
             while (datos.Lector.Read())
             {
-                Articulos aux = new Articulos();
-                aux.Id = (int)datos.Lector["Id"];
+                Articulo aux = new Articulo();
+                //aux.Id = (int)datos.Lector["Id"];
                 aux.Codigo = (string)datos.Lector["Codigo"];
                 aux.Nombre = (string)datos.Lector["Nombre"];
                 aux.Descripcion = (string)datos.Lector["Descripcion"];

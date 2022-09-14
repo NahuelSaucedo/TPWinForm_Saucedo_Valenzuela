@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Modelo
 {
-  public class Articulos
+  public class Articulo
     {
-        public int Id { get; set; }
+        //public int Id { get; set; }
         public string  Codigo { get; set; }
         public string Nombre { get; set; }
         public string  Descripcion { get; set; }
