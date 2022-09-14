@@ -35,13 +35,9 @@ namespace TPWinForm_Saucedo_Valenzuela
 
             listaArticulo = negocio.listar();
             dgvDatos.DataSource = listaArticulo;
+            dgvDatos.Columns["ImagenUrl"].Visible = false;
 
-            pbxArticulo.Load(listaArticulo[0].ImagenUrl);
-
-
-
-
-
+            cargarImagen(listaArticulo[0].ImagenUrl);
         }
 
         private void pbxArticulo_Click(object sender, EventArgs e)
