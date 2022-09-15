@@ -75,5 +75,11 @@ namespace TPWinForm_Saucedo_Valenzuela
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmAltaArticulo alta = new frmAltaArticulo();
+            alta.ShowDialog();
+        }
     }
 }

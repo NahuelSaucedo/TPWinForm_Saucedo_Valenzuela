@@ -9,7 +9,7 @@ using Modelo;
 namespace Controlador
 {
    public class ArticuloNegocio
-    {
+   {
         public List<Articulo> listar() {
             List<Articulo> Lista  = new List<Articulo>();
             AccesoDatos datos = new AccesoDatos();
@@ -44,6 +44,19 @@ namespace Controlador
             return Lista;
         }
 
+        public void agregar(Articulo nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setConsulta("insert into Articulos(codigo, nombre, descripcion)values ('','','','')");
+                datos.EjecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
 
     }
