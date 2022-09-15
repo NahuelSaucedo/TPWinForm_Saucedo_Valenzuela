@@ -38,9 +38,9 @@ namespace TPWinForm_Saucedo_Valenzuela
                 articulo.Nombre = txtnombre.Text;
                 articulo.Descripcion = txtdescripcion.Text;
                 articulo.Codigo = txtcodigo.Text;
-                articulo.Marca = txtmarca.Text;
-                articulo.Categoria = txtcategoria.Text;
-                articulo.Precio = txtprecio.Text;
+                articulo.Marca.descripcion = txtmarca.Text;
+                articulo.Categoria.descripcion = txtcategoria.Text;
+                articulo.Precio = decimal.Parse(txtprecio.Text);
 
                 negocio.agregar(articulo);
                 MessageBox.Show("Articulo agregado");

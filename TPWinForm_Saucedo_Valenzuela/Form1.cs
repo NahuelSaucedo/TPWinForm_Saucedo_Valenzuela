@@ -48,11 +48,6 @@ namespace TPWinForm_Saucedo_Valenzuela
            
         }
 
-        private void pbxArticulo_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void dgvDatos_SelectionChanged(object sender, EventArgs e)
         {
             Articulo seleccionado = (Articulo)dgvDatos.CurrentRow.DataBoundItem;

@@ -49,7 +49,9 @@ namespace Controlador
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setConsulta("insert into Articulos(codigo, nombre, descripcion)values ('','','','')");
+                datos.setConsulta("insert into Articulos(codigo, nombre, descripcion, idMarca, idCategoria) values ("+ nuevo.Codigo +","+ nuevo.Nombre +","+ nuevo.Descripcion +", @idcategoria, @idmarca)");
+                datos.SetearParametros("@idcategoria", nuevo.Categoria.id);
+                datos.SetearParametros("@idmarca", nuevo.Marca.id);
                 datos.EjecutarAccion();
             }
             catch (Exception ex)
