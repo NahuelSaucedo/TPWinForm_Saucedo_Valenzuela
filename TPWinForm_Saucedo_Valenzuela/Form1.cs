@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Modelo;
 using Controlador;
-
+using System.CodeDom;
 
 namespace TPWinForm_Saucedo_Valenzuela
 {
@@ -33,11 +33,19 @@ namespace TPWinForm_Saucedo_Valenzuela
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
 
-            listaArticulo = negocio.listar();
-            dgvDatos.DataSource = listaArticulo;
-            dgvDatos.Columns["ImagenUrl"].Visible = false;
+            try
+            {
+                listaArticulo = negocio.listar();
+                dgvDatos.DataSource = listaArticulo;
+                dgvDatos.Columns["ImagenUrl"].Visible = false;
 
-            cargarImagen(listaArticulo[0].ImagenUrl);
+                cargarImagen(listaArticulo[0].ImagenUrl);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+           
         }
 
         private void pbxArticulo_Click(object sender, EventArgs e)
@@ -61,6 +69,11 @@ namespace TPWinForm_Saucedo_Valenzuela
             {
                 pbxArticulo.Load("https://th.bing.com/th/id/OIP.B1009X_jAfBqCSnF7pd7mQHaE7?pid=ImgDet&rs=1");
             }
+        }
+
+        private void dgvDatos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
