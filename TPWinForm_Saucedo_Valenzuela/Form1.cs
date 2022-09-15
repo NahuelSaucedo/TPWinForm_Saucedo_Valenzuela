@@ -76,5 +76,7 @@ namespace TPWinForm_Saucedo_Valenzuela
             frmAltaArticulo alta = new frmAltaArticulo();
             alta.ShowDialog();
         }
+
+
     }
 }

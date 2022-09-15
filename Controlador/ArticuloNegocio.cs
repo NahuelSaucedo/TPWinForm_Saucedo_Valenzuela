@@ -25,8 +25,6 @@ namespace Controlador
                     aux.Nombre = (string)datos.Lector["Nombre"];
                 if (!(datos.Lector["Descripcion"] is DBNull))
                     aux.Descripcion = (string)datos.Lector["Descripcion"];
-                //aux.IdMarca = (int)datos.Lector["IdMarca"];
-                //aux.idCategoria= (int)datos.Lector["IdCategoria"];
                 if (!(datos.Lector["ImagenUrl"] is DBNull))
                     aux.ImagenUrl = (string)datos.Lector["ImagenUrl"];
                 if (!(datos.Lector["Precio"] is DBNull))
@@ -49,9 +47,10 @@ namespace Controlador
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setConsulta("insert into Articulos(codigo, nombre, descripcion, idMarca, idCategoria) values ("+ nuevo.Codigo +","+ nuevo.Nombre +","+ nuevo.Descripcion +", @idcategoria, @idmarca)");
+                datos.setConsulta("insert into Articulos(codigo, nombre, descripcion, idMarca, idCategoria, ImagenUrl) values ("+ nuevo.Codigo +","+ nuevo.Nombre +","+ nuevo.Descripcion +", @idcategoria, @idmarca, @urlImagen)");
                 datos.SetearParametros("@idcategoria", nuevo.Categoria.id);
                 datos.SetearParametros("@idmarca", nuevo.Marca.id);
+                datos.SetearParametros("@idUrl", nuevo.ImagenUrl);
                 datos.EjecutarAccion();
             }
             catch (Exception ex)

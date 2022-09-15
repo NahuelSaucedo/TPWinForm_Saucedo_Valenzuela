@@ -38,6 +38,7 @@ namespace TPWinForm_Saucedo_Valenzuela
                 articulo.Nombre = txtnombre.Text;
                 articulo.Descripcion = txtdescripcion.Text;
                 articulo.Codigo = txtcodigo.Text;
+                articulo.ImagenUrl = txturl.Text;
                 articulo.Marca.descripcion = txtmarca.Text;
                 articulo.Categoria.descripcion = txtcategoria.Text;
                 articulo.Precio = decimal.Parse(txtprecio.Text);
@@ -51,5 +52,22 @@ namespace TPWinForm_Saucedo_Valenzuela
                 MessageBox.Show(ex.ToString());            
             }
         }
+        private void cargarImagen(string imagen)
+        {
+            try
+            {
+                pbxUrl.Load(imagen);
+            }
+            catch (Exception)
+            {
+                pbxUrl.Load("https://th.bing.com/th/id/OIP.B1009X_jAfBqCSnF7pd7mQHaE7?pid=ImgDet&rs=1");
+            }
+        }
+
+        private void txturl_Leave(object sender, EventArgs e)
+        {
+            cargarImagen(txturl.Text);
+        }
+
     }
 }
