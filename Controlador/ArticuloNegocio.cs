@@ -30,11 +30,11 @@ namespace Controlador
                 if (!(datos.Lector["Precio"] is DBNull))
                     aux.Precio = (decimal)datos.Lector["Precio"];
                 if (!(datos.Lector["Tipo"] is DBNull))
-                    aux.Marca = new Marca();
-                    aux.Marca.descripcion = (string)datos.Lector["Tipo"];
+                    aux.marca = new Marca();
+                    aux.marca.descripcion = (string)datos.Lector["Tipo"];
                 if (!(datos.Lector["Cat"] is DBNull))
-                    aux.Categoria = new Categoria();
-                    aux.Categoria.descripcion = (string)datos.Lector["Cat"];
+                    aux.categoria = new Categoria();
+                    aux.categoria.descripcion = (string)datos.Lector["Cat"];
 
                 Lista.Add(aux);
             }
@@ -42,23 +42,37 @@ namespace Controlador
             return Lista;
         }
 
-        public void agregar(Articulo nuevo)
+        public void agregar(Articulo articulo)
         {
             AccesoDatos datos = new AccesoDatos();
+
             try
             {
-                datos.setConsulta("insert into Articulos(codigo, nombre, descripcion, idMarca, idCategoria, ImagenUrl) values ("+ nuevo.Codigo +","+ nuevo.Nombre +","+ nuevo.Descripcion +", @idcategoria, @idmarca, @urlImagen)");
-                datos.SetearParametros("@idcategoria", nuevo.Categoria.id);
-                datos.SetearParametros("@idmarca", nuevo.Marca.id);
-                datos.SetearParametros("@idUrl", nuevo.ImagenUrl);
+                datos.setConsulta("Insert into articulos values(@codigo,@nombre,@descripcion,@idmarca,@idcategoria,@urlimagen,@precio)");
+                datos.SetearParametros("@codigo", articulo.Codigo);
+                datos.SetearParametros("@nombre", articulo.Nombre);
+                datos.SetearParametros("@descripcion", articulo.Descripcion);
+                datos.SetearParametros("@idmarca", articulo.marca.id);
+                datos.SetearParametros("@idcategoria", articulo.categoria.id);
+                datos.SetearParametros("@urlimagen", articulo.ImagenUrl);
+                datos.SetearParametros("@precio", articulo.Precio);
                 datos.EjecutarAccion();
+
             }
             catch (Exception ex)
             {
+
                 throw ex;
             }
+
+            finally { 
+                datos.CerrarConexion();
+            }
+         
+            }
         }
-
-
     }
-}
+
+
+   
+
