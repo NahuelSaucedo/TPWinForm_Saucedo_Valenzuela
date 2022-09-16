@@ -51,7 +51,7 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(7, 44);
+            this.lblNombre.Location = new System.Drawing.Point(3, 44);
             this.lblNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(47, 13);
@@ -62,7 +62,7 @@
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Location = new System.Drawing.Point(7, 232);
+            this.lblDescripcion.Location = new System.Drawing.Point(4, 231);
             this.lblDescripcion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(66, 13);
@@ -72,7 +72,7 @@
             // lblCodigo
             // 
             this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(7, 4);
+            this.lblCodigo.Location = new System.Drawing.Point(4, 7);
             this.lblCodigo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(43, 13);
@@ -82,34 +82,35 @@
             // txtnombre
             // 
             this.txtnombre.BackColor = System.Drawing.SystemColors.Info;
-            this.txtnombre.Location = new System.Drawing.Point(89, 41);
+            this.txtnombre.Location = new System.Drawing.Point(78, 41);
             this.txtnombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtnombre.Name = "txtnombre";
-            this.txtnombre.Size = new System.Drawing.Size(156, 20);
+            this.txtnombre.Size = new System.Drawing.Size(179, 20);
             this.txtnombre.TabIndex = 3;
             // 
             // txtdescripcion
             // 
             this.txtdescripcion.BackColor = System.Drawing.SystemColors.Info;
-            this.txtdescripcion.Location = new System.Drawing.Point(89, 78);
+            this.txtdescripcion.Location = new System.Drawing.Point(12, 246);
             this.txtdescripcion.Margin = new System.Windows.Forms.Padding(2);
+            this.txtdescripcion.Multiline = true;
             this.txtdescripcion.Name = "txtdescripcion";
-            this.txtdescripcion.Size = new System.Drawing.Size(156, 20);
+            this.txtdescripcion.Size = new System.Drawing.Size(245, 90);
             this.txtdescripcion.TabIndex = 4;
             // 
             // txtcodigo
             // 
             this.txtcodigo.BackColor = System.Drawing.SystemColors.Info;
             this.txtcodigo.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtcodigo.Location = new System.Drawing.Point(89, 4);
+            this.txtcodigo.Location = new System.Drawing.Point(77, 4);
             this.txtcodigo.Margin = new System.Windows.Forms.Padding(2);
             this.txtcodigo.Name = "txtcodigo";
-            this.txtcodigo.Size = new System.Drawing.Size(156, 20);
+            this.txtcodigo.Size = new System.Drawing.Size(179, 20);
             this.txtcodigo.TabIndex = 2;
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(395, 278);
+            this.btnAgregar.Location = new System.Drawing.Point(354, 318);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(63, 31);
@@ -120,7 +121,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(500, 278);
+            this.btnCancelar.Location = new System.Drawing.Point(481, 318);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(63, 32);
@@ -132,7 +133,7 @@
             // lblmarca
             // 
             this.lblmarca.AutoSize = true;
-            this.lblmarca.Location = new System.Drawing.Point(7, 78);
+            this.lblmarca.Location = new System.Drawing.Point(7, 81);
             this.lblmarca.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblmarca.Name = "lblmarca";
             this.lblmarca.Size = new System.Drawing.Size(40, 13);
@@ -162,18 +163,18 @@
             // txtprecio
             // 
             this.txtprecio.BackColor = System.Drawing.SystemColors.Info;
-            this.txtprecio.Location = new System.Drawing.Point(89, 191);
+            this.txtprecio.Location = new System.Drawing.Point(78, 158);
             this.txtprecio.Margin = new System.Windows.Forms.Padding(2);
             this.txtprecio.Name = "txtprecio";
-            this.txtprecio.Size = new System.Drawing.Size(156, 20);
+            this.txtprecio.Size = new System.Drawing.Size(178, 20);
             this.txtprecio.TabIndex = 7;
             // 
             // pbxUrl
             // 
-            this.pbxUrl.Location = new System.Drawing.Point(313, 11);
+            this.pbxUrl.Location = new System.Drawing.Point(274, 7);
             this.pbxUrl.Margin = new System.Windows.Forms.Padding(2);
             this.pbxUrl.Name = "pbxUrl";
-            this.pbxUrl.Size = new System.Drawing.Size(274, 200);
+            this.pbxUrl.Size = new System.Drawing.Size(313, 307);
             this.pbxUrl.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxUrl.TabIndex = 14;
             this.pbxUrl.TabStop = false;
@@ -181,7 +182,7 @@
             // lblurl
             // 
             this.lblurl.AutoSize = true;
-            this.lblurl.Location = new System.Drawing.Point(4, 194);
+            this.lblurl.Location = new System.Drawing.Point(1, 197);
             this.lblurl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblurl.Name = "lblurl";
             this.lblurl.Size = new System.Drawing.Size(69, 13);
@@ -191,10 +192,9 @@
             // txturl
             // 
             this.txturl.BackColor = System.Drawing.SystemColors.Info;
-            this.txturl.Location = new System.Drawing.Point(7, 257);
-            this.txturl.Multiline = true;
+            this.txturl.Location = new System.Drawing.Point(78, 194);
             this.txturl.Name = "txturl";
-            this.txturl.Size = new System.Drawing.Size(305, 93);
+            this.txturl.Size = new System.Drawing.Size(178, 20);
             this.txturl.TabIndex = 8;
             this.txturl.Leave += new System.EventHandler(this.txturl_Leave);
             // 
@@ -202,18 +202,18 @@
             // 
             this.cbxMarca.BackColor = System.Drawing.SystemColors.Info;
             this.cbxMarca.FormattingEnabled = true;
-            this.cbxMarca.Location = new System.Drawing.Point(89, 115);
+            this.cbxMarca.Location = new System.Drawing.Point(77, 78);
             this.cbxMarca.Name = "cbxMarca";
-            this.cbxMarca.Size = new System.Drawing.Size(156, 21);
+            this.cbxMarca.Size = new System.Drawing.Size(179, 21);
             this.cbxMarca.TabIndex = 16;
             // 
             // cbxCategoria
             // 
             this.cbxCategoria.BackColor = System.Drawing.SystemColors.Info;
             this.cbxCategoria.FormattingEnabled = true;
-            this.cbxCategoria.Location = new System.Drawing.Point(89, 153);
+            this.cbxCategoria.Location = new System.Drawing.Point(78, 115);
             this.cbxCategoria.Name = "cbxCategoria";
-            this.cbxCategoria.Size = new System.Drawing.Size(156, 21);
+            this.cbxCategoria.Size = new System.Drawing.Size(178, 21);
             this.cbxCategoria.TabIndex = 17;
             // 
             // frmAltaArticulo
