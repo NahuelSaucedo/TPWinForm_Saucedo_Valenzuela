@@ -39,8 +39,8 @@ namespace TPWinForm_Saucedo_Valenzuela
                 articulo.Descripcion = txtdescripcion.Text;
                 articulo.Codigo = txtcodigo.Text;
                 articulo.ImagenUrl = txturl.Text;
-                articulo.Marca.descripcion = txtmarca.Text;
-                articulo.Categoria.descripcion = txtcategoria.Text;
+                articulo.Marca.descripcion = txtdescripcion.Text;
+                articulo.Categoria.descripcion = cbxCategoria.Text;
                 articulo.Precio = decimal.Parse(txtprecio.Text);
 
                 negocio.agregar(articulo);
@@ -69,5 +69,16 @@ namespace TPWinForm_Saucedo_Valenzuela
             cargarImagen(txturl.Text);
         }
 
+
+        private void cargarbox()
+        {
+            CategoriaNegocio negocio = new CategoriaNegocio();
+            cbxCategoria.DataSource = negocio.listar();
+        }
+
+        private void frmAltaArticulo_Load(object sender, EventArgs e)
+        {
+            cargarbox();
+        }
     }
 }
