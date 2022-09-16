@@ -44,5 +44,10 @@ namespace TPWinForm_Saucedo_Valenzuela
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void btnOk_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

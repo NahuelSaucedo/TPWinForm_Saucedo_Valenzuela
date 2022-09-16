@@ -13,11 +13,11 @@ using System.CodeDom;
 
 namespace TPWinForm_Saucedo_Valenzuela
 {
-    public partial class Form1 : Form
+    public partial class Catalogo : Form
     {
         private List<Articulo> listaArticulo;
 
-        public Form1()
+        public Catalogo()
         {
             InitializeComponent();
         }
