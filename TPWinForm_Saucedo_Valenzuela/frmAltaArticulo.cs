@@ -73,7 +73,9 @@ namespace TPWinForm_Saucedo_Valenzuela
         private void cargarbox()
         {
             CategoriaNegocio negocio = new CategoriaNegocio();
+            MarcaNegocio dato = new MarcaNegocio();
             cbxCategoria.DataSource = negocio.listar();
+            cbxMarca.DataSource = dato.listar();
         }
 
         private void frmAltaArticulo_Load(object sender, EventArgs e)
