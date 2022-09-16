@@ -40,6 +40,7 @@ namespace TPWinForm_Saucedo_Valenzuela
             // 
             // dgvDatos
             // 
+            this.dgvDatos.BackgroundColor = System.Drawing.SystemColors.Info;
             this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDatos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvDatos.Location = new System.Drawing.Point(10, 20);
@@ -97,6 +98,7 @@ namespace TPWinForm_Saucedo_Valenzuela
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1004, 375);
             this.Controls.Add(this.btnDetalle);
             this.Controls.Add(this.btnModificar);

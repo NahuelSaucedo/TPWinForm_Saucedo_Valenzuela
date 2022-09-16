@@ -139,6 +139,7 @@ namespace TPWinForm_Saucedo_Valenzuela
             this.Controls.Add(this.txtNombreDetalle);
             this.Controls.Add(this.txtDetalleCodigo);
             this.Name = "frmDetalle";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmDetalle";
             this.Load += new System.EventHandler(this.frmDetalle_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ptbDetalle)).EndInit();
