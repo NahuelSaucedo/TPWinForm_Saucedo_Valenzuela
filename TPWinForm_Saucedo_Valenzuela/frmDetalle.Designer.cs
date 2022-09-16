@@ -43,6 +43,7 @@ namespace TPWinForm_Saucedo_Valenzuela
             // 
             // txtDetalleCodigo
             // 
+            this.txtDetalleCodigo.BackColor = System.Drawing.SystemColors.Info;
             this.txtDetalleCodigo.Location = new System.Drawing.Point(54, 12);
             this.txtDetalleCodigo.Name = "txtDetalleCodigo";
             this.txtDetalleCodigo.ReadOnly = true;
@@ -51,6 +52,7 @@ namespace TPWinForm_Saucedo_Valenzuela
             // 
             // txtNombreDetalle
             // 
+            this.txtNombreDetalle.BackColor = System.Drawing.SystemColors.Info;
             this.txtNombreDetalle.Location = new System.Drawing.Point(54, 48);
             this.txtNombreDetalle.Name = "txtNombreDetalle";
             this.txtNombreDetalle.ReadOnly = true;
@@ -59,6 +61,7 @@ namespace TPWinForm_Saucedo_Valenzuela
             // 
             // txtPrecioDetalle
             // 
+            this.txtPrecioDetalle.BackColor = System.Drawing.SystemColors.Info;
             this.txtPrecioDetalle.Location = new System.Drawing.Point(54, 88);
             this.txtPrecioDetalle.Name = "txtPrecioDetalle";
             this.txtPrecioDetalle.ReadOnly = true;
@@ -103,6 +106,7 @@ namespace TPWinForm_Saucedo_Valenzuela
             // 
             // txtDescripcionDetalle
             // 
+            this.txtDescripcionDetalle.BackColor = System.Drawing.SystemColors.Info;
             this.txtDescripcionDetalle.Location = new System.Drawing.Point(12, 160);
             this.txtDescripcionDetalle.Multiline = true;
             this.txtDescripcionDetalle.Name = "txtDescripcionDetalle";
@@ -115,7 +119,7 @@ namespace TPWinForm_Saucedo_Valenzuela
             this.ptbDetalle.Location = new System.Drawing.Point(272, 9);
             this.ptbDetalle.Name = "ptbDetalle";
             this.ptbDetalle.Size = new System.Drawing.Size(238, 243);
-            this.ptbDetalle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.ptbDetalle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptbDetalle.TabIndex = 13;
             this.ptbDetalle.TabStop = false;
             // 
@@ -123,6 +127,7 @@ namespace TPWinForm_Saucedo_Valenzuela
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(524, 268);
             this.Controls.Add(this.ptbDetalle);
             this.Controls.Add(this.txtDescripcionDetalle);
@@ -135,6 +140,7 @@ namespace TPWinForm_Saucedo_Valenzuela
             this.Controls.Add(this.txtDetalleCodigo);
             this.Name = "frmDetalle";
             this.Text = "frmDetalle";
+            this.Load += new System.EventHandler(this.frmDetalle_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ptbDetalle)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

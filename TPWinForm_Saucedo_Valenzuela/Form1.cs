@@ -82,5 +82,13 @@ namespace TPWinForm_Saucedo_Valenzuela
             modificar.ShowDialog();
             Cargar();
         }
+
+        private void btnDetalle_Click(object sender, EventArgs e)
+        {
+            Articulo seleccionado = (Articulo)dgvDatos.CurrentRow.DataBoundItem;
+            frmDetalle detalle = new frmDetalle(seleccionado);
+            detalle.ShowDialog();
+            Cargar();
+        }
     }
 }
