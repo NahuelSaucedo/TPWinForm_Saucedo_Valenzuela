@@ -38,6 +38,7 @@ namespace TPWinForm_Saucedo_Valenzuela
                 listaArticulo = negocio.listar();
                 dgvDatos.DataSource = listaArticulo;
                 dgvDatos.Columns["ImagenUrl"].Visible = false;
+                dgvDatos.Columns["ImagenUrl"].Visible = false;
 
                 cargarImagen(listaArticulo[0].ImagenUrl);
             }
@@ -66,17 +67,20 @@ namespace TPWinForm_Saucedo_Valenzuela
             }
         }
 
-        private void dgvDatos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void btnAgregar_Click(object sender, EventArgs e)
         {
             frmAltaArticulo alta = new frmAltaArticulo();
             alta.ShowDialog();
+            Cargar();
         }
 
-
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            Articulo seleccionado;
+            seleccionado = (Articulo)dgvDatos.CurrentRow.DataBoundItem;
+            frmAltaArticulo modificar = new frmAltaArticulo(seleccionado);
+            modificar.ShowDialog();
+            Cargar();
+        }
     }
 }

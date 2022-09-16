@@ -13,12 +13,14 @@ namespace Controlador
         public List<Articulo> listar() {
             List<Articulo> Lista  = new List<Articulo>();
             AccesoDatos datos = new AccesoDatos();
-            datos.setConsulta("Select Codigo, Nombre, A.Descripcion, ImagenUrl, precio, M.Descripcion Tipo, C.Descripcion Cat from Articulos A, MARCAS M, CATEGORIAS C where a.Idmarca = m.Id and a.IdCategoria = c.Id");
+            datos.setConsulta("Select Codigo, Nombre, A.Descripcion, ImagenUrl, precio, M.Descripcion Tipo, C.Descripcion Cat, A.Id from Articulos A, MARCAS M, CATEGORIAS C where a.Idmarca = m.Id and a.IdCategoria = c.Id");
             datos.EjecutarLectura();
+
             while (datos.Lector.Read())
             {
                 Articulo aux = new Articulo();
-                //aux.Id = (int)datos.Lector["Id"];
+
+                aux.Id = (int)datos.Lector["Id"];
                 if (!(datos.Lector["Codigo"] is DBNull))
                     aux.Codigo = (string)datos.Lector["Codigo"];
                 if (!(datos.Lector["Nombre"] is DBNull))
@@ -69,9 +71,37 @@ namespace Controlador
                 datos.CerrarConexion();
             }
          
+        }
+        public void modificar(Articulo articulo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setConsulta("UPDATE ARTICULOS SET Codigo = @codigo, Nombre = @nombre, Descripcion = @descripcion, IdMarca = @idmarca, IdCategoria = @idcategoria, ImagenUrl = @imagenurl, Precio =  @precio WHERE Id = @id");
+                datos.SetearParametros ("@codigo", articulo.Codigo);
+                datos.SetearParametros("@nombre", articulo.Nombre);
+                datos.SetearParametros("@descripcion", articulo.Descripcion);
+                datos.SetearParametros("@imagenurl", articulo.ImagenUrl);
+                datos.SetearParametros("@idmarca", articulo.marca.id);
+                datos.SetearParametros("@idcategoria", articulo.categoria.id);
+                datos.SetearParametros("@precio", articulo.Precio);
+                datos.SetearParametros("@id", articulo.Id);
+
+                datos.EjecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
             }
         }
     }
+
+}
 
 
    

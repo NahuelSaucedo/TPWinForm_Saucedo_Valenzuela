@@ -21,9 +21,11 @@ namespace TPWinForm_Saucedo_Valenzuela
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        public frmAltaArticulo(Articulo articulo)
         {
-
+            InitializeComponent();
+            this.articulo = articulo;
+            Text = "Modificar Pokemon";
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -31,36 +33,45 @@ namespace TPWinForm_Saucedo_Valenzuela
             Close();
         }
 
-        private void btnAgregar_Click(object sender, EventArgs e)
+        private void btnAceptar_Click(object sender, EventArgs e)
         {
             
             ArticuloNegocio negocio = new ArticuloNegocio();
-            if(checkNullity())
+         
             try
             {
-                    if (articulo == null)
-                    {
-                        articulo = new Articulo();
-                        articulo.Nombre = txtnombre.Text;
-                        articulo.Descripcion = txtdescripcion.Text;
-                        articulo.Codigo = txtcodigo.Text;
-                        articulo.ImagenUrl = txturl.Text;
-                        articulo.marca = (Marca)cbxMarca.SelectedItem;
-                        articulo.categoria = (Categoria)cbxCategoria.SelectedItem;
-                        articulo.Precio = decimal.Parse(txtprecio.Text);
-                        articulo.categoria.id = Convert.ToInt32(cbxCategoria.SelectedValue);
-                        articulo.marca.id = Convert.ToInt32(cbxMarca.SelectedValue);
+                if (articulo == null)
+                    articulo = new Articulo();
 
-                        negocio.agregar(articulo);
-                        MessageBox.Show("Articulo agregado");
-                    }
+                articulo.Nombre = txtnombre.Text;
+                articulo.Descripcion = txtdescripcion.Text;
+                articulo.Codigo = txtcodigo.Text;
+                articulo.ImagenUrl = txturl.Text;
+                articulo.marca = (Marca)cbxMarca.SelectedItem;
+                articulo.categoria = (Categoria)cbxCategoria.SelectedItem;
+                articulo.Precio = decimal.Parse(txtprecio.Text);
+                articulo.categoria.id = Convert.ToInt32(cbxCategoria.SelectedValue);
+                articulo.marca.id = Convert.ToInt32(cbxMarca.SelectedValue);
 
+                if (articulo.Id != 0)
+                {
+                    negocio.modificar (articulo);
+                    MessageBox.Show("Articulo modificado");
+                }
+                else
+                {
+                    negocio.agregar(articulo);
+                    MessageBox.Show("Articulo agregado");
+                }
                 
+                Close();
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());            
             }
+
         }
         private void cargarImagen(string imagen)
         {
@@ -86,12 +97,13 @@ namespace TPWinForm_Saucedo_Valenzuela
             MarcaNegocio dato = new MarcaNegocio();
             try
             {
-            cbxCategoria.DataSource = negocio.listar();
-            cbxMarca.DataSource = dato.listar();
-            cbxMarca.ValueMember = "id";
-            cbxMarca.DisplayMember = "descripcion";
-            cbxCategoria.ValueMember = "id";
-            cbxCategoria.DisplayMember = "descripcion";
+                cbxCategoria.DataSource = negocio.listar();
+                cbxMarca.DataSource = dato.listar();
+                cbxMarca.ValueMember = "id";
+                cbxMarca.DisplayMember = "descripcion";
+                cbxCategoria.ValueMember = "id";
+                cbxCategoria.DisplayMember = "descripcion";
+
                 if(articulo != null)
                 {
                     txtcodigo.Text = articulo.Codigo;
