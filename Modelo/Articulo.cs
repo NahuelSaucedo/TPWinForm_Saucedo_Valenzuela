@@ -13,12 +13,12 @@ namespace Modelo
         public int Id { get; set; }
         public string Codigo { get; set; }
         public string Nombre { get; set; }
-        //[DisplayName("Descripción")]
+        [DisplayName("Descripción")]
         public string Descripcion { get; set; }
         public string ImagenUrl { get; set; }
         public decimal Precio { get; set; }
         public Marca marca { get; set; }
-        //[DisplayName("Categoría")]
+        [DisplayName("Categoría")]
         public Categoria categoria { get; set; }
      
     }
