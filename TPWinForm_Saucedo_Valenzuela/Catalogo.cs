@@ -145,5 +145,20 @@ namespace TPWinForm_Saucedo_Valenzuela
             dgvDatos.DataSource = listaFiltrada;
             OcultarColumnas();
         }
+
+        private void txtFiltro_TextChanged(object sender, EventArgs e)
+        {
+            List<Articulo> listaFiltrada;
+            string filtro = txtFiltro.Text;
+
+            if (filtro != "")
+                listaFiltrada = listaArticulo.FindAll(x => x.Nombre.ToLower().Contains(filtro.ToLower()) || x.Codigo.ToLower().Contains(filtro.ToLower()) || x.Precio.ToLower().Contains(filtro.ToLower()) || x.Descripcion.ToLower().Contains(filtro.ToLower()));
+            else
+                listaFiltrada = listaArticulo;
+
+            dgvDatos.DataSource = null;
+            dgvDatos.DataSource = listaFiltrada;
+            OcultarColumnas();
+        }
     }
 }

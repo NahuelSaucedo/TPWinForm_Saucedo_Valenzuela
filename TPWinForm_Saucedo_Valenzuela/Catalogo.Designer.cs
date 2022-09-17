@@ -91,7 +91,7 @@ namespace TPWinForm_Saucedo_Valenzuela
             // 
             // btnDetalle
             // 
-            this.btnDetalle.Location = new System.Drawing.Point(292, 414);
+            this.btnDetalle.Location = new System.Drawing.Point(297, 414);
             this.btnDetalle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDetalle.Name = "btnDetalle";
             this.btnDetalle.Size = new System.Drawing.Size(108, 32);
@@ -102,11 +102,11 @@ namespace TPWinForm_Saucedo_Valenzuela
             // 
             // btnEliminarFisico
             // 
-            this.btnEliminarFisico.Location = new System.Drawing.Point(436, 414);
+            this.btnEliminarFisico.Location = new System.Drawing.Point(441, 414);
             this.btnEliminarFisico.Name = "btnEliminarFisico";
             this.btnEliminarFisico.Size = new System.Drawing.Size(127, 32);
             this.btnEliminarFisico.TabIndex = 6;
-            this.btnEliminarFisico.Text = "Eliminar fisico";
+            this.btnEliminarFisico.Text = "Eliminar físico";
             this.btnEliminarFisico.UseVisualStyleBackColor = true;
             this.btnEliminarFisico.Click += new System.EventHandler(this.btnEliminarFisico_Click);
             // 
@@ -116,13 +116,13 @@ namespace TPWinForm_Saucedo_Valenzuela
             this.btnEliminarLogico.Name = "btnEliminarLogico";
             this.btnEliminarLogico.Size = new System.Drawing.Size(127, 32);
             this.btnEliminarLogico.TabIndex = 7;
-            this.btnEliminarLogico.Text = "Eliminar logico";
+            this.btnEliminarLogico.Text = "Eliminar lógico";
             this.btnEliminarLogico.UseVisualStyleBackColor = true;
             this.btnEliminarLogico.Click += new System.EventHandler(this.btnEliminarLogico_Click);
             // 
             // btnFiltro
             // 
-            this.btnFiltro.Location = new System.Drawing.Point(249, 9);
+            this.btnFiltro.Location = new System.Drawing.Point(822, 13);
             this.btnFiltro.Name = "btnFiltro";
             this.btnFiltro.Size = new System.Drawing.Size(75, 23);
             this.btnFiltro.TabIndex = 8;
@@ -132,19 +132,20 @@ namespace TPWinForm_Saucedo_Valenzuela
             // 
             // txtFiltro
             // 
-            this.txtFiltro.Location = new System.Drawing.Point(57, 10);
+            this.txtFiltro.Location = new System.Drawing.Point(99, 10);
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(177, 22);
             this.txtFiltro.TabIndex = 9;
+            this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
             // 
             // lblFiltro
             // 
             this.lblFiltro.AutoSize = true;
             this.lblFiltro.Location = new System.Drawing.Point(12, 13);
             this.lblFiltro.Name = "lblFiltro";
-            this.lblFiltro.Size = new System.Drawing.Size(39, 16);
+            this.lblFiltro.Size = new System.Drawing.Size(81, 16);
             this.lblFiltro.TabIndex = 10;
-            this.lblFiltro.Text = "Filtro:";
+            this.lblFiltro.Text = "Filtro rápido:";
             // 
             // Catalogo
             // 
