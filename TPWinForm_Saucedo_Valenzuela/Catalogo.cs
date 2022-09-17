@@ -25,6 +25,10 @@ namespace TPWinForm_Saucedo_Valenzuela
         private void Form1_Load(object sender, EventArgs e)
         {
             Cargar();
+            cbxCampo.Items.Add("Código");
+            cbxCampo.Items.Add("Nombre");
+            cbxCampo.Items.Add("Marca");
+            cbxCampo.Items.Add("Categoría");
 
         }
 
@@ -133,17 +137,19 @@ namespace TPWinForm_Saucedo_Valenzuela
 
         private void btnFiltro_Click(object sender, EventArgs e)
         {
-            List<Articulo> listaFiltrada;
-            string filtro = txtFiltro.Text;
-
-            if (filtro != "")
-                listaFiltrada = listaArticulo.FindAll(x => x.Nombre.ToLower().Contains(filtro.ToLower()));
-            else
-                listaFiltrada = listaArticulo;
-
-            dgvDatos.DataSource = null;
-            dgvDatos.DataSource = listaFiltrada;
-            OcultarColumnas();
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            try
+            {
+                string campo = cbxCampo.SelectedItem.ToString();
+                string criterio = cbxCriterio.SelectedItem.ToString();
+                string filtro = txtFiltroAvanzado.Text;
+                dgvDatos.DataSource = negocio.filtrar(campo, criterio, filtro);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            
         }
 
         private void txtFiltro_TextChanged(object sender, EventArgs e)
@@ -152,13 +158,22 @@ namespace TPWinForm_Saucedo_Valenzuela
             string filtro = txtFiltro.Text;
 
             if (filtro != "")
-                listaFiltrada = listaArticulo.FindAll(x => x.Nombre.ToLower().Contains(filtro.ToLower()) || x.Codigo.ToLower().Contains(filtro.ToLower()) || x.Precio.ToLower().Contains(filtro.ToLower()) || x.Descripcion.ToLower().Contains(filtro.ToLower()));
+                listaFiltrada = listaArticulo.FindAll(x => x.Nombre.ToLower().Contains(filtro.ToLower()) || x.Codigo.ToLower().Contains(filtro.ToLower()) || x.Descripcion.ToLower().Contains(filtro.ToLower()) || x.marca.descripcion.ToLower().Contains(filtro.ToLower()) || x.categoria.descripcion.ToLower().Contains(filtro.ToLower()));
             else
                 listaFiltrada = listaArticulo;
 
             dgvDatos.DataSource = null;
             dgvDatos.DataSource = listaFiltrada;
             OcultarColumnas();
+        }
+
+        private void cbxCampo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string opcion = cbxCampo.SelectedItem.ToString();
+            cbxCriterio.Items.Clear();
+            cbxCriterio.Items.Add("Comienza con");
+            cbxCriterio.Items.Add("Termina con");
+            cbxCriterio.Items.Add("Contiene");
         }
     }
 }

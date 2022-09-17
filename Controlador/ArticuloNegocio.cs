@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -129,10 +130,122 @@ namespace Controlador
                 throw ex;
             }
         }
+
+        public List<Articulo> filtrar(string campo, string criterio, string filtro)
+        {
+            List<Articulo> lista = new List<Articulo> ();
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                string consulta = "Select Codigo, Nombre, A.Descripcion, ImagenUrl, precio, M.Descripcion Tipo, C.Descripcion Cat, A.Id from Articulos A, MARCAS M, CATEGORIAS C where a.Idmarca = m.Id and a.IdCategoria = c.Id and A.Activo=1 And ";
+
+                switch (campo)
+                {
+                    case "Código":
+                        switch (criterio)
+                        {
+                            case "Comienza con":
+                                consulta += "Codigo like '" + filtro + "%' ";
+                                break;
+                            case "Termina con":
+                                consulta += "Codigo like '%" + filtro + "' ";
+                                break;
+                            case "Contiene":
+                                consulta += "Codigo like '%" + filtro + "%' ";
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
+                    case "Nombre":
+                        switch (criterio)
+                        {
+                            case "Comienza con":
+                                consulta += "Nombre like '" + filtro + "%' ";
+                                break;
+                            case "Termina con":
+                                consulta += "Nombre like '%" + filtro + "' ";
+                                break;
+                            case "Contiene":
+                                consulta += "Nombre like '%" + filtro + "%' ";
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
+                    case "Marca":
+                        switch (criterio)
+                        {
+                            case "Comienza con":
+                                consulta += "M.Descripcion like '" + filtro + "%' ";
+                                break;
+                            case "Termina con":
+                                consulta += "M.Descripcion like '%" + filtro + "' ";
+                                break;
+                            case "Contiene":
+                                consulta += "M.Descripcion like '%" + filtro + "%' ";
+                                break;
+            
+                        }
+                        break;
+                    case "Categoría":
+                        switch (criterio)
+                        {
+                            case "Comienza con":
+                                consulta += "C.Descripcion like '" + filtro + "%' ";
+                                break;
+                            case "Termina con":
+                                consulta += "C.Descripcion like '%" + filtro + "' ";
+                                break;
+                            case "Contiene":
+                                consulta += "C.Descripcion like '%" + filtro + "%' ";
+                                break;
+                           default:
+                                break;
+                        }
+                        break;
+                    default :
+                        break;
+                }
+
+                datos.setConsulta(consulta);
+                datos.EjecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    Articulo aux = new Articulo();
+
+                    aux.Id = (int)datos.Lector["Id"];
+                    if (!(datos.Lector["Codigo"] is DBNull))
+                        aux.Codigo = (string)datos.Lector["Codigo"];
+                    if (!(datos.Lector["Nombre"] is DBNull))
+                        aux.Nombre = (string)datos.Lector["Nombre"];
+                    if (!(datos.Lector["Descripcion"] is DBNull))
+                        aux.Descripcion = (string)datos.Lector["Descripcion"];
+                    if (!(datos.Lector["ImagenUrl"] is DBNull))
+                        aux.ImagenUrl = (string)datos.Lector["ImagenUrl"];
+                    if (!(datos.Lector["Precio"] is DBNull))
+                        aux.Precio = (decimal)datos.Lector["Precio"];
+                    if (!(datos.Lector["Tipo"] is DBNull))
+                        aux.marca = new Marca();
+                    aux.marca.descripcion = (string)datos.Lector["Tipo"];
+                    if (!(datos.Lector["Cat"] is DBNull))
+                        aux.categoria = new Categoria();
+                    aux.categoria.descripcion = (string)datos.Lector["Cat"];
+
+                    lista.Add(aux);
+
+                }
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 
 }
 
-
-   
 
