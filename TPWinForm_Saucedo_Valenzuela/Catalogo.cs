@@ -37,9 +37,7 @@ namespace TPWinForm_Saucedo_Valenzuela
             {
                 listaArticulo = negocio.listar();
                 dgvDatos.DataSource = listaArticulo;
-                dgvDatos.Columns["ImagenUrl"].Visible = false;
-                dgvDatos.Columns["Id"].Visible = false;
-
+                OcultarColumnas();
                 cargarImagen(listaArticulo[0].ImagenUrl);
             }
             catch (Exception ex)
@@ -49,10 +47,19 @@ namespace TPWinForm_Saucedo_Valenzuela
            
         }
 
+        private void OcultarColumnas()
+        {
+            dgvDatos.Columns["ImagenUrl"].Visible = false;
+            dgvDatos.Columns["Id"].Visible = false;
+        }
+
         private void dgvDatos_SelectionChanged(object sender, EventArgs e)
         {
-            Articulo seleccionado = (Articulo)dgvDatos.CurrentRow.DataBoundItem;
-            cargarImagen(seleccionado.ImagenUrl);
+            if (dgvDatos.CurrentRow != null)
+            {
+                Articulo seleccionado = (Articulo)dgvDatos.CurrentRow.DataBoundItem;
+                cargarImagen(seleccionado.ImagenUrl);
+            }
         }
 
         private void cargarImagen(string imagen) 
@@ -122,6 +129,21 @@ namespace TPWinForm_Saucedo_Valenzuela
         private void btnEliminarLogico_Click(object sender, EventArgs e)
         {
             Eliminar(true);
+        }
+
+        private void btnFiltro_Click(object sender, EventArgs e)
+        {
+            List<Articulo> listaFiltrada;
+            string filtro = txtFiltro.Text;
+
+            if (filtro != "")
+                listaFiltrada = listaArticulo.FindAll(x => x.Nombre.ToLower().Contains(filtro.ToLower()));
+            else
+                listaFiltrada = listaArticulo;
+
+            dgvDatos.DataSource = null;
+            dgvDatos.DataSource = listaFiltrada;
+            OcultarColumnas();
         }
     }
 }
