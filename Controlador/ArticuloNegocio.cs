@@ -99,7 +99,22 @@ namespace Controlador
                 datos.CerrarConexion();
             }
         }
-    }
+        
+        public void Eliminar (int id)
+        {
+            try
+            {
+                AccesoDatos datos = new AccesoDatos();
+                datos.setConsulta("delete from ARTICULOS where id=@id");
+                datos.SetearParametros("@id", id);
+                datos.EjecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex; 
+            }
+        }
+   }
 
 }
 

@@ -25,7 +25,7 @@ namespace TPWinForm_Saucedo_Valenzuela
         {
             InitializeComponent();
             this.articulo = articulo;
-            Text = "Modificar Pokemon";
+            Text = "Modificar Artículo";
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

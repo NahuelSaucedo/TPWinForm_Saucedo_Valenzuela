@@ -38,7 +38,7 @@ namespace TPWinForm_Saucedo_Valenzuela
                 listaArticulo = negocio.listar();
                 dgvDatos.DataSource = listaArticulo;
                 dgvDatos.Columns["ImagenUrl"].Visible = false;
-                dgvDatos.Columns["ImagenUrl"].Visible = false;
+                dgvDatos.Columns["Id"].Visible = false;
 
                 cargarImagen(listaArticulo[0].ImagenUrl);
             }
@@ -89,6 +89,26 @@ namespace TPWinForm_Saucedo_Valenzuela
             frmDetalle detalle = new frmDetalle(seleccionado);
             detalle.ShowDialog();
             Cargar();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            Articulo seleccionado;
+            try
+            {
+                DialogResult respuesta = MessageBox.Show("¿Seguro de que quieres eliminarlo?", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (respuesta == DialogResult.Yes)
+                {
+                    seleccionado = (Articulo)dgvDatos.CurrentRow.DataBoundItem;
+                    negocio.Eliminar(seleccionado.Id);
+                    Cargar();
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }
