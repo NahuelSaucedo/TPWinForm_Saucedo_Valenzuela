@@ -91,7 +91,12 @@ namespace TPWinForm_Saucedo_Valenzuela
             Cargar();
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private void btnEliminarFisico_Click(object sender, EventArgs e)
+        {
+            Eliminar();
+        }
+
+        private void Eliminar(bool logico = false)
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
             Articulo seleccionado;
@@ -101,14 +106,22 @@ namespace TPWinForm_Saucedo_Valenzuela
                 if (respuesta == DialogResult.Yes)
                 {
                     seleccionado = (Articulo)dgvDatos.CurrentRow.DataBoundItem;
-                    negocio.Eliminar(seleccionado.Id);
+
+                    if (logico) negocio.EliminarLogico(seleccionado.Id);
+                    else negocio.Eliminar(seleccionado.Id);
+
                     Cargar();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void btnEliminarLogico_Click(object sender, EventArgs e)
+        {
+            Eliminar(true);
         }
     }
 }

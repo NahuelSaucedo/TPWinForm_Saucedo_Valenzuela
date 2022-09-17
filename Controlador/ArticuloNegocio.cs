@@ -13,7 +13,7 @@ namespace Controlador
         public List<Articulo> listar() {
             List<Articulo> Lista  = new List<Articulo>();
             AccesoDatos datos = new AccesoDatos();
-            datos.setConsulta("Select Codigo, Nombre, A.Descripcion, ImagenUrl, precio, M.Descripcion Tipo, C.Descripcion Cat, A.Id from Articulos A, MARCAS M, CATEGORIAS C where a.Idmarca = m.Id and a.IdCategoria = c.Id");
+            datos.setConsulta("Select Codigo, Nombre, A.Descripcion, ImagenUrl, precio, M.Descripcion Tipo, C.Descripcion Cat, A.Id from Articulos A, MARCAS M, CATEGORIAS C where a.Idmarca = m.Id and a.IdCategoria = c.Id and A.Activo=1");
             datos.EjecutarLectura();
 
             while (datos.Lector.Read())
@@ -114,7 +114,22 @@ namespace Controlador
                 throw ex; 
             }
         }
-   }
+
+        public void EliminarLogico(int id)
+        {
+            try
+            {
+                AccesoDatos datos = new AccesoDatos();
+                datos.setConsulta("update ARTICULOS set Activo = 0 where id = @id");
+                datos.SetearParametros("@id", id);
+                datos.EjecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+    }
 
 }
 
