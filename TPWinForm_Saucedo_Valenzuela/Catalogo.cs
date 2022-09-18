@@ -87,11 +87,19 @@ namespace TPWinForm_Saucedo_Valenzuela
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            Articulo seleccionado;
-            seleccionado = (Articulo)dgvDatos.CurrentRow.DataBoundItem;
-            frmAltaArticulo modificar = new frmAltaArticulo(seleccionado);
-            modificar.ShowDialog();
-            Cargar();
+
+            if (dgvDatos.Rows.Count == 0)
+            {
+                MessageBox.Show("NO HAY NADA SELECIONADO");
+            }
+            else
+            {
+                Articulo seleccionado;
+                seleccionado = (Articulo)dgvDatos.CurrentRow.DataBoundItem;
+                frmAltaArticulo modificar = new frmAltaArticulo(seleccionado);
+                modificar.ShowDialog();
+                Cargar();
+            }
         }
 
         private void btnDetalle_Click(object sender, EventArgs e)
@@ -140,6 +148,9 @@ namespace TPWinForm_Saucedo_Valenzuela
             ArticuloNegocio negocio = new ArticuloNegocio();
             try
             {
+                if (validarFiltro())
+                    return;
+
                 string campo = cbxCampo.SelectedItem.ToString();
                 string criterio = cbxCriterio.SelectedItem.ToString();
                 string filtro = txtFiltroAvanzado.Text;
@@ -175,5 +186,43 @@ namespace TPWinForm_Saucedo_Valenzuela
             cbxCriterio.Items.Add("Termina con");
             cbxCriterio.Items.Add("Contiene");
         }
+
+        private bool validarFiltro()
+        {
+            if (cbxCampo.SelectedIndex < 0)
+            {
+                MessageBox.Show("por favor, seleccione el campo a filtrar");
+                return true;
+            }
+
+            if (cbxCriterio.SelectedIndex < 0)
+            {
+                MessageBox.Show("por favor, seleccione el criterio a filtrar");
+                return true;
+            }
+            if(cbxCampo.SelectedItem.ToString() == "Precio")
+            {
+                if (!(solonumeros(txtFiltro.Text)))
+                {
+                    MessageBox.Show("Solo numeros para filtrar por un campo numerico");
+                    return true;
+                }
+
+            }
+
+            return false;
+        }
+
+        private bool solonumeros(string cadena)
+        {
+            foreach(char caracter in cadena)
+            {
+                if (!(char.IsNumber(caracter)))
+                    return false;
+            }
+            return true;
+        }
+
+
     }
 }
