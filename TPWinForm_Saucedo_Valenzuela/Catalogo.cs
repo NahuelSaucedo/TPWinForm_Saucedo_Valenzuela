@@ -104,10 +104,18 @@ namespace TPWinForm_Saucedo_Valenzuela
 
         private void btnDetalle_Click(object sender, EventArgs e)
         {
-            Articulo seleccionado = (Articulo)dgvDatos.CurrentRow.DataBoundItem;
-            frmDetalle detalle = new frmDetalle(seleccionado);
-            detalle.ShowDialog();
-            Cargar();
+            if (dgvDatos.Rows.Count == 0)
+            {
+                MessageBox.Show("NO HAY NADA SELECIONADO","ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+
+                Articulo seleccionado = (Articulo)dgvDatos.CurrentRow.DataBoundItem;
+                frmDetalle detalle = new frmDetalle(seleccionado);
+                detalle.ShowDialog();
+                Cargar();
+            }
         }
 
         private void btnEliminarFisico_Click(object sender, EventArgs e)

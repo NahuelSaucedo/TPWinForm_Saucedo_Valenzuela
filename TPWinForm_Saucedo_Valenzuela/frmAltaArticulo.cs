@@ -43,6 +43,8 @@ namespace TPWinForm_Saucedo_Valenzuela
                 if (articulo == null)
                     articulo = new Articulo();
 
+    
+
                 articulo.Nombre = txtnombre.Text;
                 articulo.Descripcion = txtdescripcion.Text;
                 articulo.Codigo = txtcodigo.Text;
@@ -52,6 +54,7 @@ namespace TPWinForm_Saucedo_Valenzuela
                 articulo.Precio = decimal.Parse(txtprecio.Text);
                 articulo.categoria.id = Convert.ToInt32(cbxCategoria.SelectedValue);
                 articulo.marca.id = Convert.ToInt32(cbxMarca.SelectedValue);
+                articulo.Activo = 1;
 
                 if (articulo.Id != 0)
                 {
@@ -140,5 +143,17 @@ namespace TPWinForm_Saucedo_Valenzuela
         {
             cargarbox();
         }
+
+
+        private bool solonumeros(string cadena)
+        {
+            foreach (char caracter in cadena)
+            {
+                if (!(char.IsNumber(caracter)))
+                    return false;
+            }
+            return true;
+        }
+
     }
 }

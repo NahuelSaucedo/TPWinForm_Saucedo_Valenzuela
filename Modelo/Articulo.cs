@@ -20,6 +20,11 @@ namespace Modelo
         public Marca marca { get; set; }
         [DisplayName("Categoría")]
         public Categoria categoria { get; set; }
-     
+        public int  Activo { get; set; }
+
+
+
+
+
     }
 }

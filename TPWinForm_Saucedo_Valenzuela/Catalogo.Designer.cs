@@ -54,31 +54,30 @@ namespace TPWinForm_Saucedo_Valenzuela
             this.dgvDatos.BackgroundColor = System.Drawing.SystemColors.Info;
             this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDatos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvDatos.Location = new System.Drawing.Point(13, 41);
-            this.dgvDatos.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvDatos.Location = new System.Drawing.Point(10, 33);
             this.dgvDatos.MultiSelect = false;
             this.dgvDatos.Name = "dgvDatos";
             this.dgvDatos.RowHeadersWidth = 51;
             this.dgvDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDatos.Size = new System.Drawing.Size(884, 348);
+            this.dgvDatos.Size = new System.Drawing.Size(663, 283);
             this.dgvDatos.TabIndex = 0;
             // 
             // pbxArticulo
             // 
-            this.pbxArticulo.Location = new System.Drawing.Point(925, 41);
-            this.pbxArticulo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbxArticulo.Location = new System.Drawing.Point(694, 33);
+            this.pbxArticulo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pbxArticulo.Name = "pbxArticulo";
-            this.pbxArticulo.Size = new System.Drawing.Size(381, 348);
+            this.pbxArticulo.Size = new System.Drawing.Size(286, 283);
             this.pbxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxArticulo.TabIndex = 2;
             this.pbxArticulo.TabStop = false;
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(13, 414);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAgregar.Location = new System.Drawing.Point(10, 336);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(108, 32);
+            this.btnAgregar.Size = new System.Drawing.Size(81, 26);
             this.btnAgregar.TabIndex = 3;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -86,10 +85,10 @@ namespace TPWinForm_Saucedo_Valenzuela
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(155, 414);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnModificar.Location = new System.Drawing.Point(116, 336);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(108, 32);
+            this.btnModificar.Size = new System.Drawing.Size(81, 26);
             this.btnModificar.TabIndex = 4;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
@@ -97,10 +96,10 @@ namespace TPWinForm_Saucedo_Valenzuela
             // 
             // btnDetalle
             // 
-            this.btnDetalle.Location = new System.Drawing.Point(297, 414);
-            this.btnDetalle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDetalle.Location = new System.Drawing.Point(223, 336);
+            this.btnDetalle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDetalle.Name = "btnDetalle";
-            this.btnDetalle.Size = new System.Drawing.Size(108, 32);
+            this.btnDetalle.Size = new System.Drawing.Size(81, 26);
             this.btnDetalle.TabIndex = 5;
             this.btnDetalle.Text = "Detalle";
             this.btnDetalle.UseVisualStyleBackColor = true;
@@ -108,9 +107,10 @@ namespace TPWinForm_Saucedo_Valenzuela
             // 
             // btnEliminarFisico
             // 
-            this.btnEliminarFisico.Location = new System.Drawing.Point(439, 414);
+            this.btnEliminarFisico.Location = new System.Drawing.Point(329, 336);
+            this.btnEliminarFisico.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEliminarFisico.Name = "btnEliminarFisico";
-            this.btnEliminarFisico.Size = new System.Drawing.Size(127, 32);
+            this.btnEliminarFisico.Size = new System.Drawing.Size(95, 26);
             this.btnEliminarFisico.TabIndex = 6;
             this.btnEliminarFisico.Text = "Eliminar físico";
             this.btnEliminarFisico.UseVisualStyleBackColor = true;
@@ -118,9 +118,10 @@ namespace TPWinForm_Saucedo_Valenzuela
             // 
             // btnEliminarLogico
             // 
-            this.btnEliminarLogico.Location = new System.Drawing.Point(600, 414);
+            this.btnEliminarLogico.Location = new System.Drawing.Point(450, 336);
+            this.btnEliminarLogico.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEliminarLogico.Name = "btnEliminarLogico";
-            this.btnEliminarLogico.Size = new System.Drawing.Size(127, 32);
+            this.btnEliminarLogico.Size = new System.Drawing.Size(95, 26);
             this.btnEliminarLogico.TabIndex = 7;
             this.btnEliminarLogico.Text = "Eliminar lógico";
             this.btnEliminarLogico.UseVisualStyleBackColor = true;
@@ -128,9 +129,10 @@ namespace TPWinForm_Saucedo_Valenzuela
             // 
             // btnFiltro
             // 
-            this.btnFiltro.Location = new System.Drawing.Point(789, 477);
+            this.btnFiltro.Location = new System.Drawing.Point(592, 388);
+            this.btnFiltro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnFiltro.Name = "btnFiltro";
-            this.btnFiltro.Size = new System.Drawing.Size(75, 23);
+            this.btnFiltro.Size = new System.Drawing.Size(69, 20);
             this.btnFiltro.TabIndex = 8;
             this.btnFiltro.Text = "Buscar";
             this.btnFiltro.UseVisualStyleBackColor = true;
@@ -138,45 +140,50 @@ namespace TPWinForm_Saucedo_Valenzuela
             // 
             // txtFiltro
             // 
-            this.txtFiltro.Location = new System.Drawing.Point(99, 10);
+            this.txtFiltro.Location = new System.Drawing.Point(74, 8);
+            this.txtFiltro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(177, 22);
+            this.txtFiltro.Size = new System.Drawing.Size(134, 20);
             this.txtFiltro.TabIndex = 9;
             this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
             // 
             // lblFiltro
             // 
             this.lblFiltro.AutoSize = true;
-            this.lblFiltro.Location = new System.Drawing.Point(12, 13);
+            this.lblFiltro.Location = new System.Drawing.Point(9, 11);
+            this.lblFiltro.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFiltro.Name = "lblFiltro";
-            this.lblFiltro.Size = new System.Drawing.Size(81, 16);
+            this.lblFiltro.Size = new System.Drawing.Size(64, 13);
             this.lblFiltro.TabIndex = 10;
             this.lblFiltro.Text = "Filtro rápido:";
             // 
             // lblCriterio
             // 
             this.lblCriterio.AutoSize = true;
-            this.lblCriterio.Location = new System.Drawing.Point(238, 480);
+            this.lblCriterio.Location = new System.Drawing.Point(178, 390);
+            this.lblCriterio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCriterio.Name = "lblCriterio";
-            this.lblCriterio.Size = new System.Drawing.Size(52, 16);
+            this.lblCriterio.Size = new System.Drawing.Size(42, 13);
             this.lblCriterio.TabIndex = 11;
             this.lblCriterio.Text = "Criterio:";
             // 
             // lblCampo
             // 
             this.lblCampo.AutoSize = true;
-            this.lblCampo.Location = new System.Drawing.Point(12, 480);
+            this.lblCampo.Location = new System.Drawing.Point(9, 390);
+            this.lblCampo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCampo.Name = "lblCampo";
-            this.lblCampo.Size = new System.Drawing.Size(54, 16);
+            this.lblCampo.Size = new System.Drawing.Size(43, 13);
             this.lblCampo.TabIndex = 12;
             this.lblCampo.Text = "Campo:";
             // 
             // lblFiltroAvanzado
             // 
             this.lblFiltroAvanzado.AutoSize = true;
-            this.lblFiltroAvanzado.Location = new System.Drawing.Point(496, 480);
+            this.lblFiltroAvanzado.Location = new System.Drawing.Point(372, 390);
+            this.lblFiltroAvanzado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFiltroAvanzado.Name = "lblFiltroAvanzado";
-            this.lblFiltroAvanzado.Size = new System.Drawing.Size(39, 16);
+            this.lblFiltroAvanzado.Size = new System.Drawing.Size(32, 13);
             this.lblFiltroAvanzado.TabIndex = 13;
             this.lblFiltroAvanzado.Text = "Filtro:";
             // 
@@ -184,9 +191,10 @@ namespace TPWinForm_Saucedo_Valenzuela
             // 
             this.cbxCampo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxCampo.FormattingEnabled = true;
-            this.cbxCampo.Location = new System.Drawing.Point(83, 476);
+            this.cbxCampo.Location = new System.Drawing.Point(62, 387);
+            this.cbxCampo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbxCampo.Name = "cbxCampo";
-            this.cbxCampo.Size = new System.Drawing.Size(121, 24);
+            this.cbxCampo.Size = new System.Drawing.Size(92, 21);
             this.cbxCampo.TabIndex = 14;
             this.cbxCampo.SelectedIndexChanged += new System.EventHandler(this.cbxCampo_SelectedIndexChanged);
             // 
@@ -194,24 +202,26 @@ namespace TPWinForm_Saucedo_Valenzuela
             // 
             this.cbxCriterio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxCriterio.FormattingEnabled = true;
-            this.cbxCriterio.Location = new System.Drawing.Point(311, 476);
+            this.cbxCriterio.Location = new System.Drawing.Point(233, 387);
+            this.cbxCriterio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbxCriterio.Name = "cbxCriterio";
-            this.cbxCriterio.Size = new System.Drawing.Size(121, 24);
+            this.cbxCriterio.Size = new System.Drawing.Size(92, 21);
             this.cbxCriterio.TabIndex = 15;
             // 
             // txtFiltroAvanzado
             // 
-            this.txtFiltroAvanzado.Location = new System.Drawing.Point(550, 476);
+            this.txtFiltroAvanzado.Location = new System.Drawing.Point(412, 387);
+            this.txtFiltroAvanzado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtFiltroAvanzado.Name = "txtFiltroAvanzado";
-            this.txtFiltroAvanzado.Size = new System.Drawing.Size(177, 22);
+            this.txtFiltroAvanzado.Size = new System.Drawing.Size(134, 20);
             this.txtFiltroAvanzado.TabIndex = 16;
             // 
             // Catalogo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1339, 532);
+            this.ClientSize = new System.Drawing.Size(1004, 432);
             this.Controls.Add(this.txtFiltroAvanzado);
             this.Controls.Add(this.cbxCriterio);
             this.Controls.Add(this.cbxCampo);
@@ -228,7 +238,6 @@ namespace TPWinForm_Saucedo_Valenzuela
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.pbxArticulo);
             this.Controls.Add(this.dgvDatos);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Catalogo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Catálogo de artículos";

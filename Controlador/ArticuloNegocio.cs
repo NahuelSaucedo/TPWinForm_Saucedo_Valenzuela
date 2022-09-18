@@ -51,7 +51,7 @@ namespace Controlador
 
             try
             {
-                datos.setConsulta("Insert into articulos values(@codigo,@nombre,@descripcion,@idmarca,@idcategoria,@urlimagen,@precio)");
+                datos.setConsulta("Insert into articulos values(@codigo,@nombre,@descripcion,@idmarca,@idcategoria,@urlimagen,@precio,@ACTIVO)");
                 datos.SetearParametros("@codigo", articulo.Codigo);
                 datos.SetearParametros("@nombre", articulo.Nombre);
                 datos.SetearParametros("@descripcion", articulo.Descripcion);
@@ -59,6 +59,7 @@ namespace Controlador
                 datos.SetearParametros("@idcategoria", articulo.categoria.id);
                 datos.SetearParametros("@urlimagen", articulo.ImagenUrl);
                 datos.SetearParametros("@precio", articulo.Precio);
+                datos.SetearParametros("@Activo", articulo.Activo);
                 datos.EjecutarAccion();
 
             }
