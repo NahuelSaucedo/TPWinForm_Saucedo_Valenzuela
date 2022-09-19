@@ -51,21 +51,26 @@ namespace TPWinForm_Saucedo_Valenzuela
             // 
             // dgvDatos
             // 
+            this.dgvDatos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDatos.BackgroundColor = System.Drawing.SystemColors.Info;
             this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDatos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvDatos.Location = new System.Drawing.Point(10, 33);
+            this.dgvDatos.Location = new System.Drawing.Point(10, 60);
+            this.dgvDatos.MaximumSize = new System.Drawing.Size(663, 256);
+            this.dgvDatos.MinimumSize = new System.Drawing.Size(663, 256);
             this.dgvDatos.MultiSelect = false;
             this.dgvDatos.Name = "dgvDatos";
             this.dgvDatos.RowHeadersWidth = 51;
             this.dgvDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDatos.Size = new System.Drawing.Size(663, 283);
+            this.dgvDatos.Size = new System.Drawing.Size(663, 256);
             this.dgvDatos.TabIndex = 0;
             this.dgvDatos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDatos_CellContentClick);
             // 
             // pbxArticulo
             // 
-            this.pbxArticulo.Location = new System.Drawing.Point(694, 33);
+            this.pbxArticulo.Location = new System.Drawing.Point(707, 60);
             this.pbxArticulo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pbxArticulo.Name = "pbxArticulo";
             this.pbxArticulo.Size = new System.Drawing.Size(286, 283);
@@ -141,7 +146,7 @@ namespace TPWinForm_Saucedo_Valenzuela
             // 
             // txtFiltro
             // 
-            this.txtFiltro.Location = new System.Drawing.Point(74, 8);
+            this.txtFiltro.Location = new System.Drawing.Point(86, 30);
             this.txtFiltro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(134, 20);
@@ -151,7 +156,7 @@ namespace TPWinForm_Saucedo_Valenzuela
             // lblFiltro
             // 
             this.lblFiltro.AutoSize = true;
-            this.lblFiltro.Location = new System.Drawing.Point(9, 11);
+            this.lblFiltro.Location = new System.Drawing.Point(11, 33);
             this.lblFiltro.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFiltro.Name = "lblFiltro";
             this.lblFiltro.Size = new System.Drawing.Size(64, 13);
@@ -239,6 +244,8 @@ namespace TPWinForm_Saucedo_Valenzuela
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.pbxArticulo);
             this.Controls.Add(this.dgvDatos);
+            this.MaximumSize = new System.Drawing.Size(1020, 471);
+            this.MinimumSize = new System.Drawing.Size(1020, 471);
             this.Name = "Catalogo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Catálogo de artículos";

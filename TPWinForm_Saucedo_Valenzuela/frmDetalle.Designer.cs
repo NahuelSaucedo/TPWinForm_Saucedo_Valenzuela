@@ -45,99 +45,91 @@ namespace TPWinForm_Saucedo_Valenzuela
             // txtDetalleCodigo
             // 
             this.txtDetalleCodigo.BackColor = System.Drawing.SystemColors.Info;
-            this.txtDetalleCodigo.Location = new System.Drawing.Point(80, 21);
-            this.txtDetalleCodigo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDetalleCodigo.Location = new System.Drawing.Point(60, 17);
             this.txtDetalleCodigo.Name = "txtDetalleCodigo";
             this.txtDetalleCodigo.ReadOnly = true;
-            this.txtDetalleCodigo.Size = new System.Drawing.Size(235, 22);
+            this.txtDetalleCodigo.Size = new System.Drawing.Size(177, 20);
             this.txtDetalleCodigo.TabIndex = 5;
             // 
             // txtNombreDetalle
             // 
             this.txtNombreDetalle.BackColor = System.Drawing.SystemColors.Info;
-            this.txtNombreDetalle.Location = new System.Drawing.Point(80, 72);
-            this.txtNombreDetalle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombreDetalle.Location = new System.Drawing.Point(60, 58);
             this.txtNombreDetalle.Name = "txtNombreDetalle";
             this.txtNombreDetalle.ReadOnly = true;
-            this.txtNombreDetalle.Size = new System.Drawing.Size(235, 22);
+            this.txtNombreDetalle.Size = new System.Drawing.Size(177, 20);
             this.txtNombreDetalle.TabIndex = 6;
             // 
             // txtPrecioDetalle
             // 
             this.txtPrecioDetalle.BackColor = System.Drawing.SystemColors.Info;
-            this.txtPrecioDetalle.Location = new System.Drawing.Point(80, 119);
-            this.txtPrecioDetalle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPrecioDetalle.Location = new System.Drawing.Point(60, 97);
             this.txtPrecioDetalle.Name = "txtPrecioDetalle";
             this.txtPrecioDetalle.ReadOnly = true;
-            this.txtPrecioDetalle.Size = new System.Drawing.Size(235, 22);
+            this.txtPrecioDetalle.Size = new System.Drawing.Size(177, 20);
             this.txtPrecioDetalle.TabIndex = 7;
             // 
             // lblCodigoDetalle
             // 
             this.lblCodigoDetalle.AutoSize = true;
-            this.lblCodigoDetalle.Location = new System.Drawing.Point(15, 24);
-            this.lblCodigoDetalle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCodigoDetalle.Location = new System.Drawing.Point(11, 20);
             this.lblCodigoDetalle.Name = "lblCodigoDetalle";
-            this.lblCodigoDetalle.Size = new System.Drawing.Size(54, 16);
+            this.lblCodigoDetalle.Size = new System.Drawing.Size(43, 13);
             this.lblCodigoDetalle.TabIndex = 8;
             this.lblCodigoDetalle.Text = "Codigo:";
             // 
             // lblNombreDetalle
             // 
             this.lblNombreDetalle.AutoSize = true;
-            this.lblNombreDetalle.Location = new System.Drawing.Point(15, 72);
-            this.lblNombreDetalle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNombreDetalle.Location = new System.Drawing.Point(11, 58);
             this.lblNombreDetalle.Name = "lblNombreDetalle";
-            this.lblNombreDetalle.Size = new System.Drawing.Size(59, 16);
+            this.lblNombreDetalle.Size = new System.Drawing.Size(47, 13);
             this.lblNombreDetalle.TabIndex = 9;
             this.lblNombreDetalle.Text = "Nombre:";
             // 
             // lblPrecioDetalle
             // 
             this.lblPrecioDetalle.AutoSize = true;
-            this.lblPrecioDetalle.Location = new System.Drawing.Point(15, 119);
-            this.lblPrecioDetalle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPrecioDetalle.Location = new System.Drawing.Point(11, 97);
             this.lblPrecioDetalle.Name = "lblPrecioDetalle";
-            this.lblPrecioDetalle.Size = new System.Drawing.Size(49, 16);
+            this.lblPrecioDetalle.Size = new System.Drawing.Size(40, 13);
             this.lblPrecioDetalle.TabIndex = 10;
             this.lblPrecioDetalle.Text = "Precio:";
             // 
             // lblDescripcionDetalle
             // 
             this.lblDescripcionDetalle.AutoSize = true;
-            this.lblDescripcionDetalle.Location = new System.Drawing.Point(15, 162);
-            this.lblDescripcionDetalle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDescripcionDetalle.Location = new System.Drawing.Point(11, 132);
             this.lblDescripcionDetalle.Name = "lblDescripcionDetalle";
-            this.lblDescripcionDetalle.Size = new System.Drawing.Size(82, 16);
+            this.lblDescripcionDetalle.Size = new System.Drawing.Size(66, 13);
             this.lblDescripcionDetalle.TabIndex = 11;
             this.lblDescripcionDetalle.Text = "Descripcion:";
             // 
             // txtDescripcionDetalle
             // 
             this.txtDescripcionDetalle.BackColor = System.Drawing.SystemColors.Info;
-            this.txtDescripcionDetalle.Location = new System.Drawing.Point(18, 194);
-            this.txtDescripcionDetalle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDescripcionDetalle.Location = new System.Drawing.Point(14, 158);
             this.txtDescripcionDetalle.Multiline = true;
             this.txtDescripcionDetalle.Name = "txtDescripcionDetalle";
             this.txtDescripcionDetalle.ReadOnly = true;
-            this.txtDescripcionDetalle.Size = new System.Drawing.Size(299, 84);
+            this.txtDescripcionDetalle.Size = new System.Drawing.Size(225, 69);
             this.txtDescripcionDetalle.TabIndex = 12;
             // 
             // ptbDetalle
             // 
-            this.ptbDetalle.Location = new System.Drawing.Point(363, 11);
-            this.ptbDetalle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ptbDetalle.Location = new System.Drawing.Point(272, 9);
             this.ptbDetalle.Name = "ptbDetalle";
-            this.ptbDetalle.Size = new System.Drawing.Size(317, 328);
+            this.ptbDetalle.Size = new System.Drawing.Size(238, 266);
             this.ptbDetalle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptbDetalle.TabIndex = 13;
             this.ptbDetalle.TabStop = false;
             // 
             // btnOk
             // 
-            this.btnOk.Location = new System.Drawing.Point(124, 301);
+            this.btnOk.Location = new System.Drawing.Point(93, 245);
+            this.btnOk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(99, 39);
+            this.btnOk.Size = new System.Drawing.Size(74, 32);
             this.btnOk.TabIndex = 14;
             this.btnOk.Text = "Ok";
             this.btnOk.UseVisualStyleBackColor = true;
@@ -145,10 +137,10 @@ namespace TPWinForm_Saucedo_Valenzuela
             // 
             // frmDetalle
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(699, 352);
+            this.ClientSize = new System.Drawing.Size(524, 286);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.ptbDetalle);
             this.Controls.Add(this.txtDescripcionDetalle);
@@ -159,7 +151,8 @@ namespace TPWinForm_Saucedo_Valenzuela
             this.Controls.Add(this.txtPrecioDetalle);
             this.Controls.Add(this.txtNombreDetalle);
             this.Controls.Add(this.txtDetalleCodigo);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MaximumSize = new System.Drawing.Size(540, 325);
+            this.MinimumSize = new System.Drawing.Size(540, 325);
             this.Name = "frmDetalle";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Detalle";

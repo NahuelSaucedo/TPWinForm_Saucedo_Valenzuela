@@ -51,7 +51,7 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(23, 46);
+            this.lblNombre.Location = new System.Drawing.Point(24, 56);
             this.lblNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(47, 13);
@@ -61,7 +61,7 @@
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Location = new System.Drawing.Point(4, 235);
+            this.lblDescripcion.Location = new System.Drawing.Point(5, 242);
             this.lblDescripcion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(66, 13);
@@ -71,7 +71,7 @@
             // lblCodigo
             // 
             this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(27, 16);
+            this.lblCodigo.Location = new System.Drawing.Point(28, 19);
             this.lblCodigo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(43, 13);
@@ -132,7 +132,7 @@
             // lblmarca
             // 
             this.lblmarca.AutoSize = true;
-            this.lblmarca.Location = new System.Drawing.Point(29, 84);
+            this.lblmarca.Location = new System.Drawing.Point(31, 96);
             this.lblmarca.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblmarca.Name = "lblmarca";
             this.lblmarca.Size = new System.Drawing.Size(40, 13);
@@ -142,7 +142,7 @@
             // lblcategoria
             // 
             this.lblcategoria.AutoSize = true;
-            this.lblcategoria.Location = new System.Drawing.Point(16, 122);
+            this.lblcategoria.Location = new System.Drawing.Point(15, 132);
             this.lblcategoria.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblcategoria.Name = "lblcategoria";
             this.lblcategoria.Size = new System.Drawing.Size(55, 13);
@@ -152,7 +152,7 @@
             // lblprecio
             // 
             this.lblprecio.AutoSize = true;
-            this.lblprecio.Location = new System.Drawing.Point(28, 158);
+            this.lblprecio.Location = new System.Drawing.Point(27, 168);
             this.lblprecio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblprecio.Name = "lblprecio";
             this.lblprecio.Size = new System.Drawing.Size(40, 13);
@@ -181,7 +181,7 @@
             // lblurl
             // 
             this.lblurl.AutoSize = true;
-            this.lblurl.Location = new System.Drawing.Point(4, 199);
+            this.lblurl.Location = new System.Drawing.Point(4, 207);
             this.lblurl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblurl.Name = "lblurl";
             this.lblurl.Size = new System.Drawing.Size(69, 13);
@@ -240,6 +240,8 @@
             this.Controls.Add(this.lblNombre);
             this.ImeMode = System.Windows.Forms.ImeMode.On;
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MaximumSize = new System.Drawing.Size(529, 370);
+            this.MinimumSize = new System.Drawing.Size(529, 370);
             this.Name = "frmAltaArticulo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo Articulo";
