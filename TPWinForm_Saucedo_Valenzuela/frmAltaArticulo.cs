@@ -56,16 +56,17 @@ namespace TPWinForm_Saucedo_Valenzuela
                 articulo.marca.id = Convert.ToInt32(cbxMarca.SelectedValue);
                 articulo.Activo = 1;
 
-                if (articulo.Id != 0)
-                {
-                    negocio.modificar (articulo);
-                    MessageBox.Show("Articulo modificado");
-                }
-                else
-                {
-                    negocio.agregar(articulo);
-                    MessageBox.Show("Articulo agregado");
-                }
+         
+                    if (articulo.Id != 0)
+                    {
+                        negocio.modificar(articulo);
+                        MessageBox.Show("Articulo modificado");
+                    }
+                    else
+                    {
+                        negocio.agregar(articulo);
+                        MessageBox.Show("Articulo agregado");
+                    }
                 
                 Close();
 
@@ -139,21 +140,12 @@ namespace TPWinForm_Saucedo_Valenzuela
         }
 
 
+
         private void frmAltaArticulo_Load(object sender, EventArgs e)
         {
             cargarbox();
         }
 
-
-        private bool solonumeros(string cadena)
-        {
-            foreach (char caracter in cadena)
-            {
-                if (!(char.IsNumber(caracter)))
-                    return false;
-            }
-            return true;
-        }
 
     }
 }

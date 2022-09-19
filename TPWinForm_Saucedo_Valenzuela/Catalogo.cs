@@ -43,11 +43,14 @@ namespace TPWinForm_Saucedo_Valenzuela
                 dgvDatos.DataSource = listaArticulo;
                 OcultarColumnas();
                 cargarImagen(listaArticulo[0].ImagenUrl);
+                
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
+
+            txtFiltro.Text = string.Empty;
            
         }
 
@@ -57,7 +60,7 @@ namespace TPWinForm_Saucedo_Valenzuela
             dgvDatos.Columns["Id"].Visible = false;
         }
 
-        private void dgvDatos_SelectionChanged(object sender, EventArgs e)
+   /*   private void dgvDatos_SelectionChanged(object sender, EventArgs e)
         {
             if (dgvDatos.CurrentRow != null)
             {
@@ -65,16 +68,17 @@ namespace TPWinForm_Saucedo_Valenzuela
                 cargarImagen(seleccionado.ImagenUrl);
             }
         }
-
+   */
         private void cargarImagen(string imagen) 
         {
             try
             {
                 pbxArticulo.Load(imagen);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 pbxArticulo.Load("https://th.bing.com/th/id/OIP.B1009X_jAfBqCSnF7pd7mQHaE7?pid=ImgDet&rs=1");
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -90,7 +94,7 @@ namespace TPWinForm_Saucedo_Valenzuela
 
             if (dgvDatos.Rows.Count == 0)
             {
-                MessageBox.Show("NO HAY NADA SELECIONADO");
+                MessageBox.Show("NO HAY NADA SELECIONADO", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -120,29 +124,45 @@ namespace TPWinForm_Saucedo_Valenzuela
 
         private void btnEliminarFisico_Click(object sender, EventArgs e)
         {
+            if (dgvDatos.Rows.Count == 0)
+            {
+                MessageBox.Show("NO HAY NADA SELECIONADO", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
             Eliminar();
+
+            }
         }
 
         private void Eliminar(bool logico = false)
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
             Articulo seleccionado;
-            try
+
+            if (dgvDatos.Rows.Count == 0)
             {
-                DialogResult respuesta = MessageBox.Show("¿Seguro de que quieres eliminarlo?", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (respuesta == DialogResult.Yes)
-                {
-                    seleccionado = (Articulo)dgvDatos.CurrentRow.DataBoundItem;
-
-                    if (logico) negocio.EliminarLogico(seleccionado.Id);
-                    else negocio.Eliminar(seleccionado.Id);
-
-                    Cargar();
-                }
+                MessageBox.Show("NO HAY NADA SELECIONADO", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.ToString());
+                try
+                {
+                    DialogResult respuesta = MessageBox.Show("¿Seguro de que quieres eliminarlo?", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (respuesta == DialogResult.Yes)
+                    {
+                        seleccionado = (Articulo)dgvDatos.CurrentRow.DataBoundItem;
+
+                        if (logico) negocio.EliminarLogico(seleccionado.Id);
+                        else negocio.Eliminar(seleccionado.Id);
+
+                        Cargar();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
             }
         }
 
@@ -231,6 +251,13 @@ namespace TPWinForm_Saucedo_Valenzuela
             return true;
         }
 
-
+        private void dgvDatos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvDatos.CurrentRow != null)
+            {
+                Articulo seleccionado = (Articulo)dgvDatos.CurrentRow.DataBoundItem;
+                cargarImagen(seleccionado.ImagenUrl);
+            }
+        }
     }
 }
