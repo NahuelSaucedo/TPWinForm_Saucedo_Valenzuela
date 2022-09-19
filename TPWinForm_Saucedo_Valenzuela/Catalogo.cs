@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Modelo;
 using Controlador;
 using System.CodeDom;
+using System.Configuration;
 
 namespace TPWinForm_Saucedo_Valenzuela
 {
@@ -60,7 +61,7 @@ namespace TPWinForm_Saucedo_Valenzuela
             dgvDatos.Columns["Id"].Visible = false;
         }
 
-   /*   private void dgvDatos_SelectionChanged(object sender, EventArgs e)
+        private void dgvDatos_SelectionChanged(object sender, EventArgs e)
         {
             if (dgvDatos.CurrentRow != null)
             {
@@ -68,7 +69,7 @@ namespace TPWinForm_Saucedo_Valenzuela
                 cargarImagen(seleccionado.ImagenUrl);
             }
         }
-   */
+   
         private void cargarImagen(string imagen) 
         {
             try

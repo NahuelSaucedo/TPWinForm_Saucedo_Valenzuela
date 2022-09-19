@@ -9,12 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Modelo;
 using Controlador;
+using System.Configuration;
+using System.IO;
 
 namespace TPWinForm_Saucedo_Valenzuela
 {
     public partial class frmAltaArticulo : Form
     {
         Articulo articulo = null;
+        private OpenFileDialog archivo = null;
 
         public frmAltaArticulo()
         {
@@ -54,20 +57,22 @@ namespace TPWinForm_Saucedo_Valenzuela
                 articulo.Precio = decimal.Parse(txtprecio.Text);
                 articulo.categoria.id = Convert.ToInt32(cbxCategoria.SelectedValue);
                 articulo.marca.id = Convert.ToInt32(cbxMarca.SelectedValue);
-                articulo.Activo = 1;
 
          
-                    if (articulo.Id != 0)
-                    {
-                        negocio.modificar(articulo);
-                        MessageBox.Show("Articulo modificado");
-                    }
-                    else
-                    {
-                        negocio.agregar(articulo);
-                        MessageBox.Show("Articulo agregado");
-                    }
-                
+                if (articulo.Id != 0)
+                {
+                    negocio.modificar(articulo);
+                    MessageBox.Show("Articulo modificado");
+                }
+                else
+                {
+                    negocio.agregar(articulo);
+                    MessageBox.Show("Articulo agregado");
+                }
+
+                if (archivo != null && !(txturl.Text.ToUpper().Contains("HTTP")))
+                    File.Copy(archivo.FileName, ConfigurationManager.AppSettings["images-folder"] + archivo.SafeFileName);
+
                 Close();
 
             }
@@ -146,6 +151,15 @@ namespace TPWinForm_Saucedo_Valenzuela
             cargarbox();
         }
 
-
+        private void btnAgregarImagen_Click(object sender, EventArgs e)
+        {
+            archivo = new OpenFileDialog();
+            archivo.Filter = "jpg|*.jpg;|png|*.png";
+            if (archivo.ShowDialog() == DialogResult.OK)
+            {
+                txturl.Text = archivo.FileName;
+                cargarImagen(archivo.FileName);
+            }
+        }
     }
 }
